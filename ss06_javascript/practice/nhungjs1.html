@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-   <button type="button" onclick="alert('Xin Chào');"> Click me!</button>
+    <p id="Content">Xin Chào</p>
+   <button type="button" onclick="changedata('Red')">Nút 1</button>
+   <button type="button" onclick="changedata('Yellow')">Nút 2</button>
+    <script>
+        count= 0;
+        function changedata(color) {
+            document.getElementById('Content').style.color = color
+            if(count > 0) {
+                document.getElementById('content').style.background = 'yellow'
+            }
+            count =count+1
+        }
+    </script>
 </body>
 </html>
