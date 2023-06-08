@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>CaCulator</h1>
+<table>
+  <tr>
+    <td>
+      <input type="number" placeholder="Nhập số thứ nhất" id="inputnumber1">
+    </td>
+    <td>
+      <input type="number" placeholder="Nhập số thứ hai" id="inputnumber2">
+    </td>
+    <td>
+      <input type="button" value="Cộng" onclick="changedata1()">
+    </td>
+    <td>
+      <input type="button" value="Trừ" onclick="changedata2()">
+    </td>
+  </tr>
+</table><br>
+<h2>Result:</h2>
+<p id="result">Đây là kết quả:</p>
+  <script>
+    function changedata1() {
+      let input1 =+document.getElementById("inputnumber1").value
+      let input2 =+document.getElementById("inputnumber2").value
+      result = "result= " + (input1 + input2)
+      document.getElementById("result").innerHTML=result
+    }
+    function changedata2() {
+      let input3 =+document.getElementById("inputnumber1").value
+      let input4 =+document.getElementById("inputnumber2").value
+      result = "result= " +(input3 - input4)
+      document.getElementById("result").innerHTML=result
+
+    }
+  </script>
+</body>
+</html>
