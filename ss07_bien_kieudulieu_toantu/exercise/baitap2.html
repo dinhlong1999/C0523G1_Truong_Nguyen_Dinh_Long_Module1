@@ -6,32 +6,47 @@
 </head>
 <body>
 
-        <table>
-            <tr>
-                <th>Amount </th>
-                <th>From Currency </th>
-                <th>To Currency </th>
-                <th></th>
-            </tr>
-            <tr>
-                <td id="a"><input type="number"> </td>
-                <td id="b">
-                    <select>
-                        <option value="VND">VND</option>
-                        <option value="USA">USA</option>
-                    </select>
-                </td>
-                <td id="c">
-                    <select>
-                        <option value="VND">VND</option>
-                        <option value="USA">USA</option>
-                    </select>
-                </td>
-                <td><input type="submit" value="convert"></td>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="number" name="amount" id='money'>
+        <td>
+            <select id="From" name="from">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="To" name="to">
+                <option value="USD">USD</option>
+                <option value="VND">VND</option>
+            </select>
+        </td>
+        <td><input type="submit" value="Convert" onclick="Changemoney()"></td>
+    </tr>
+</table>
+<p id="result"></p>
+<script>
+    function Changemoney() {
+        let a = document.getElementById('money').value;
+        let from = document.getElementById('From').value;
+        let to = document.getElementById('To').value;
 
-            </tr>
-        </table>
-
-
+        if (from == "USD" && to == "VND")
+            result = "result= " + (a * 23000) + " Đ"
+        else if (from == "VND" && to == "USD")
+            result = "result= " + (a / 23000) + " USD"
+        else if (from == "USD")
+            result = "result= " + a + " USD"
+        else
+            result = "result is " + a + "Đ"
+        document.getElementById('result').innerHTML = result
+    }
+</script>
 </body>
 </html>
