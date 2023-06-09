@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tâp 3</title>
+</head>
+<body>
+<table>
+  <tr>
+    <td colspan="4" style="text-align: right; height: 30px;border: solid black 1px">
+      <span id="result"></span>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="button" value="1" onclick="cal('1')"></td>
+    <td><input type="button" value="2" onclick="cal('2')"></td>
+    <td><input type="button" value="3" onclick="cal('3')"></td>
+    <td><input type="button" value="+" onclick="cal('+')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="4" onclick="cal('4')"></td>
+    <td><input type="button" value="5" onclick="cal('5')"></td>
+    <td><input type="button" value="6" onclick="cal('6')"></td>
+    <td><input type="button" value="-" onclick="cal('7')"></td>
+  </tr>
+    <td><input type="button" value="7" onclick="cal('7')"></td>
+    <td><input type="button" value="8" onclick="cal('8')"></td>
+    <td><input type="button" value="9" onclick="cal('9')"></td>
+    <td><input type="button" value="*" onclick="cal('*')"></td>
+  <tr>
+    <td><input type="button" value="C" onclick="cal('C')"></td>
+    <td><input type="button" value="0" onclick="cal('0')"></td>
+    <td><input type="button" value="=" onclick="cal('=')"></td>
+    <td><input type="button" value="/" onclick="cal('/')"></td>
+  </tr>
+</table>
+  <script>
+    function cal(i) {
+     let result =document.getElementById("result").value ;
+      switch (i) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+        case "0":
+        case "+":
+        case "-":
+        case "*":
+        case "/":
+        result = result + i ;
+        break;
+        case "c":
+        result =""
+        case "="
+        result =
+      }
+    }
+  </script>
+
+</body>
+</html>

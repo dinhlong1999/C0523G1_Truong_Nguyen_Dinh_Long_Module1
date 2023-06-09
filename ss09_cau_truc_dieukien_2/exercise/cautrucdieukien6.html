@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<value>Doanh số bán hàng đạt được:</value>
+<br>
+<input type="number" id="money"> <br>
+<input type="button" onclick="check()" value="Check">
+<br>
+<p id="result"></p>
+</body>
+<script>
+    function check() {
+        let money = document.getElementById("money").value;
+        if (money < 10000000)
+            result = "Hoa hồng tháng này (5%) =1.500.000 Đ"
+        else if (money <= 20000000)
+            result = "Hoa hồng tháng này (7%) =2.100.000 Đ"
+        else
+            result = "Hoa hồng tháng này (10%) =3.000.000 Đ"
+
+        document.getElementById("result").innerHTML = result;
+    }
+
+</script>
+</html>

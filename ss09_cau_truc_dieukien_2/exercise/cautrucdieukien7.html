@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Cước điện thoại của một hộ gia đình (đơn vị phút):</label><br>
+<input type="number" id="tel"> <br>
+<input type="button" value="check" onclick="changedata()">
+<p id="result"></p>
+<script>
+  function changedata() {
+    let money = document.getElementById("tel").value
+    if (money > 500000)
+      result = 'Cước phí điện thoại của hộ gia đình là: 1.000.000Đ'
+    else
+      result = "Cước phí điện thoại của hộ gia đình là :750.000Đ"
+    document.getElementById("result").innerHTML = result
+  }
+
+
+
+</script>
+</body>
+</html>
