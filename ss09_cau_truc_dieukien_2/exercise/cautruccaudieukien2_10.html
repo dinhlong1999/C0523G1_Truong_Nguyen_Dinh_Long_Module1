@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc câu điều kiện bài 10</title>
+</head>
+<body>
+<h1>Chương trình tính giá điện</h1>
+<form>
+    <table>
+        <tr>
+            <td>Nhập số kWh của gia đình:</td>
+            <td><input type="number" placeholder="Nhập số điện" id="input"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Check" onclick="check()"></td>
+        </tr>
+    </table>
+    <div id="result"></div>
+</form>
+<script>
+    function check() {
+        let kwh = document.getElementById("input").value;
+        let data;
+        if (kwh > 200) {
+            data = kwh * 4000;
+        } else {
+            data = kwh * 3000;
+        }
+        document.getElementById("result").innerHTML = "Tiền điện của gia đình bạn tháng này là: " + data + "Đ"
+    }
+</script>
+</body>
+</html>

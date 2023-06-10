@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cấu trúc điều kiên 2_9</title>
+</head>
+<body>
+<h1>HÌNH TAM GIÁC</h1>
+<form>
+    <table>
+        <tr>
+            <td>Độ dài cạnh a:</td>
+            <td>Độ dài cạnh b:</td>
+            <td>Độ dài cạnh c:</td>
+        </tr>
+        <tr>
+            <td><input type="number" placeholder="Nhập số" id="num1"></td>
+            <td><input type="number" placeholder="Nhập số" id="num2"></td>
+            <td><input type="number" placeholder="Nhập số" id="num3"></td>
+        </tr>
+    </table>
+    <br>
+    <input type="button" value="check" onclick="changedata()">
+</form>
+<div id="result"></div>
+<script>
+    function changedata() {
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+        let c = parseInt(document.getElementById("num3").value);
+        let data;
+        if (a > 0 && b > 0 && c > 0)
+            if ((a + b) > c && (b + c) > a && (a + c) > b)
+                data = "Đây là hình tam giác. ";
+            else
+                data = "Đây là không phải hình tam giác.";
+        else
+            data = "Đây không phải hình tam giác"
+        document.getElementById("result").innerHTML = data;
+
+
+    }
+</script>
+</body>
+</html>

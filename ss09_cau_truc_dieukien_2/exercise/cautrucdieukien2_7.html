@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cấu trúc điều kiện 2_7</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập giá trị của a: "));
+    let b = parseInt(prompt("Nhập giá trị của b: "))
+    let c = parseInt(prompt("Nhập giá trị của c: "));
+
+    let denta = (Math.pow(b, 2)) - (4 * a * c);
+    let x1 = (-b + Math.sqrt(denta)) / (2 * a);
+    let x2 = (-b - Math.sqrt(denta)) / (2 * a);
+    let x = -b / (2 * a);
+
+    if (denta > 0) {
+        alert("Phương trình có 2 nghiệm " + x1 + " và " + x2);
+    } else if (denta == 0) {
+        alert("Phương trình có nghiệm kép " + x);
+    } else {
+        alert("Phương trình vô nghiệm");
+    }
+
+</script>
+</body>
+</html>
