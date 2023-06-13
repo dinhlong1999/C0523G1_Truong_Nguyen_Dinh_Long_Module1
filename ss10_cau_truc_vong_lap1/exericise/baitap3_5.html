@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập 3-5</title>
+</head>
+<body>
+<script>
+    let n1 = 0;
+    let n2 = 1;
+    let sum = 0;
+    let result = 0;
+    for (let i = 0; i < 20; i++) {
+        n1 = n2;
+        n2 = sum;
+        sum = n1 + n2;
+        document.write("Số thứ tự của " + i + "=" + sum + "</br>")
+        result = result + sum
+    }
+    document.write("Tổng các số: " + "=" + result)
+
+</script>
+</body>
+</html>

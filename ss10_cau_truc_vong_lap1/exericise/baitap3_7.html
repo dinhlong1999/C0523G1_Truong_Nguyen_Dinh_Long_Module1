@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bàitap3_7</title>
+</head>
+<body>
+    <script>
+      for (let num = 1; num <101 ; num++) {
+            if (num %3===0 && num%5 !==0) {
+                document.write("Fizz" +"</br>");
+                continue;
+            }else if (num%3!==0 && num%5 ===0) {
+                document.write("Buzz" +"</br>");
+                continue;
+            }else if (num%3 ===0 && num%5===0) {
+                document.write("FizzBuzz" +"</br>");
+                continue;
+            }else
+                document.write(num +"</br>");
+      }
+    </script>
+</body>
+</html>
