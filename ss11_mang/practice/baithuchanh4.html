@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tìm số lớn nhất trong mảng:</title>
+</head>
+<body>
+<script>
+    let x = [-3, 5, 1, 3, 2, 10];
+    let max = x[0];
+    let pos = 0;
+    for (let i = 1; i < x.length; i++) {
+        if (x[i] > max) {
+            max = x[i];
+            pos = i;
+        }
+    }
+    alert("Số lớn nhât trong mảng: =" + max + " at position " + pos);
+</script>
+</body>
+</html>
