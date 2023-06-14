@@ -5,9 +5,25 @@
     <title>Bài tập 2</title>
 </head>
 <body>
-    <script>
-      let num;
-      let count = 0;
-    </script>
+<script>
+    let count = 0;
+    num = 2;
+    debugger;
+    while (count < 20) {
+        let flag = true;
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            count++;
+            console.log(num + " ");
+
+        }
+        num++;
+    }
+</script>
 </body>
 </html>
