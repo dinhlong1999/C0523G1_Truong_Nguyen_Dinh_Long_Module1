@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược số </title>
+</head>
+<body>
+<script>
+    let arr = prompt("Nhập số của bạn vào")
+    arr = arr.split('')
+
+    let first = 0;
+    let last = arr.length - 1;
+    while (first < last) {
+        let b = arr[first];
+        arr[first] = arr[last];
+        arr[last] = b;
+        first++;
+        last--;
+    }
+    document.write(arr);
+
+
+</script>
+</body>
+</html>

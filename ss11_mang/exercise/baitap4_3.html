@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập hiện giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+<script>
+    let arr = [3, 50, 22, 88, 78, 25, 99, 11, 5, 27];
+    let sum = 0;
+    let max = arr[0];
+    let avr ;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    for (let j = 0; j <arr.length; j++) {
+        sum +=arr[j]
+    }
+    avr = sum / arr.length
+    document.write("số lớn nhất trong dãy là: " + max + " Số trung bình: " + avr
+    )
+</script>
+</body>
+</html>

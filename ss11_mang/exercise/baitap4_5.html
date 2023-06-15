@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số nguyên âm trong một chuỗi</title>
+</head>
+<body>
+<script>
+    let num = prompt("Nhập chữ của bạn: ");
+    num = num.split('');
+    let count = 0;
+    let nguyenAm = ["u", "e", "o", "a", "i"];
+    for (let i = 0; i < num.length; i++) {
+        for (let j = 0; j < nguyenAm.length; j++) {
+            if (num[i] === nguyenAm[j]) {
+                count++;
+            }
+        }
+    }
+    document.write("Có " + count + " Trong dãy này");
+</script>
+</body>
+</html>
