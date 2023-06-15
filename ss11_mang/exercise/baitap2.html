@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<form>
+  <value>Nhập từ:</value>
+  <input type="text" id="txt">
+  <input type="button" value="Dịch" onclick="changedata()">
+  <div id="result"></div>
+</form>
+  <script>
+    function changedata() {
+        let arr = ["banana", "apple", "candy"];
+        let arr1 = ["chuối", "táo", "kẹo"];
+        let sear = document.getElementById("txt").value;
+        let data;
+        for (let i = 0; i < arr.length; i++) {
+            if (sear === arr[i]) {
+                for (let j = 0; j < arr1.length; j++) {
+                    data = arr1[i]
+                }
+            }
+        }
+    document.getElementById("result").innerText= data
+    }
+
+
+  </script>
+</body>
+</html>
