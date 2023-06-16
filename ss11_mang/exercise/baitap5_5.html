@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tâp 5_5</title>
+</head>
+<body>
+<script>
+    let arr1 = prompt("Nhap 1 chuoi: ");
+    let arr2 = prompt("Nhap 2 chuoi: ");
+    arr1 = arr1.split('');
+    arr2 = arr2.split('');
+    let flag = true;
+    debugger;
+    if (arr1.length === arr2.length) {
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] !== arr2[i]) {
+                flag = false;
+                alert("Hai chuoi nay khong giong nhau. ");
+                break;
+            }
+        }
+        if (flag) {
+            alert("Hai chuoi nay giong nhau.");
+        }
+    }else {
+        alert("Hai chuoi nay khong giong nhau.");
+    }
+</script>
+</body>
+</html>

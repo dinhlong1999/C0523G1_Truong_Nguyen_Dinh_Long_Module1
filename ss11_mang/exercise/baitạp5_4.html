@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 5_4</title>
+</head>
+<body>
+<script>
+    let txt = prompt("Nhap ki tu cua ban: ");
+    txt = txt.split('');
+    let count = 0;
+    for (let i = 0; i < txt.length; i++) {
+        if (isNaN(txt[i])) {
+            count++;
+        }
+    }
+    alert("Số kí tự có trong mảng: " + count)
+</script>
+</body>
+</html>
