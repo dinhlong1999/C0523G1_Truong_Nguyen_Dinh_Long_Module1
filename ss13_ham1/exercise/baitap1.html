@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let number = +prompt("Please import your number want check: ");
+    isPrime(number);
+    function isPrime(number) {
+        debugger;
+        let count = 0;
+        let flag = false;
+        if (number === 0) {
+            alert(number + "is not a prime number.")
+        } else {
+            for (let i = 1; i <= number; i++) {
+                if (number % i === 0) {
+                    count += 1;
+                }
+            }
+            if (count === 2) {
+                flag = true;
+            }
+            if (flag) {
+                alert(number + " is a prime number.");
+            } else {
+                alert(number + " is not a prime number.");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

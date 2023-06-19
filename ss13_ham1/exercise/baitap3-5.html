@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="result"></div>
+  <script>
+    let starsUser = prompt("Import stars");
+
+    searchStars(starsUser);
+    function searchStars(starsUser) {
+      let stars1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+      let stars2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major","Leo"];
+      let index_stars1 = -1;
+      let result = '';
+      for (let i = 0; i < stars1.length; i++) {
+        if (starsUser === stars1[i]) {
+          index_stars1 = i;
+          break;
+        }
+      }
+      if (index_stars1 !== -1) {
+        result = stars2[index_stars1];
+      }else {
+        result = "Không tìm thấy từ"
+      }
+      document.getElementById("result").innerHTML= result ;
+    }
+  </script>
+</body>
+</html>
