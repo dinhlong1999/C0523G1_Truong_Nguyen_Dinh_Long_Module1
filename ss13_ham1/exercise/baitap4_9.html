@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai tap 4_9</title>
+</head>
+<body>
+<script>
+    function checkArray(arr, num) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === num) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return count;
+        } else {
+            return -1;
+        }
+    }
+    let arr = prompt("Please import a string:");
+    arr = arr.split('');
+    let num = prompt("Please import a number: ");
+    checkArray(arr, num);
+    alert(checkArray(arr, num));
+</script>
+</body>
+</html>
