@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 1</title>
+</head>
+<body>
+<canvas id="canvas" width="50px" height="80px"></canvas>
+<script>
+    class Rectangle {
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+
+        getAcreage() {
+            return this.height * this.width;
+        }
+
+        getPerimeter() {
+            return (this.height + this.width) / 2 ;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        getHeight() {
+            return this.height;
+        }
+
+        setHeight(height) {
+            this.height = height;
+        }
+
+        setWidth(width) {
+            this.width = width;
+        }
+    }
+
+    let rectangle = new Rectangle(10, 20);
+    rectangle.setHeight(30);
+    rectangle.setWidth(40);
+    let width = rectangle.getWidth();
+    let height = rectangle.getHeight();
+    document.write("Acreage rectangle= " + rectangle.getAcreage() + "</br>" + "Perimeter rectangle =" + rectangle.getPerimeter());
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = "#FF0000" ;
+    ctx.fillRect(10, 10, width, height);
+
+
+</script>
+</body>
+</html>

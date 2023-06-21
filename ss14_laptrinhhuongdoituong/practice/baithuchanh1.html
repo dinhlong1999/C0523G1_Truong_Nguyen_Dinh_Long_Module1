@@ -6,36 +6,67 @@
 </head>
 <body>
 <script>
-    let myDate = function (day, month, year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
-        this.getDay = function () {
-            return this.day;
-        }
-        this.getMonth = function () {
-            return this.month;
-        }
-        this.getYear = function () {
-            return this.year;
-        }
-        this.setDay = function (day) {
+    // let myDate = function (day, month, year) {
+    //     this.day = day;
+    //     this.month = month;
+    //     this.year = year;
+    //     this.getDay = function () {
+    //         return this.day;
+    //     }
+    //     this.getMonth = function () {
+    //         return this.month;
+    //     }
+    //     this.getYear = function () {
+    //         return this.year;
+    //     }
+    //     this.setDay = function (day) {
+    //         this.day = day;
+    //     }
+    //     this.setMonth = function (month) {
+    //         this.month = month;
+    //     }
+    //     this.setYear = function (year) {
+    //         this.year = year;
+    //     }
+    //     this.setDate = function (day, month, year) {
+    //         this.day=day;
+    //         this.month=month;
+    //         this.year=year;
+    //     }
+    //
+    // };
+    class MyDate {
+        constructor(day, month, year) {
             this.day = day;
-        }
-        this.setMonth = function (month) {
             this.month = month;
-        }
-        this.setYear = function (year) {
             this.year = year;
+            this.getDay = function () {
+                return this.day;
+            }
+            this.getMonth = function () {
+                return this.month;
+            }
+            this.getYear = function () {
+                return this.year;
+            }
+            this.setDay = function (day) {
+                this.day = day;
+            }
+            this.setMonth = function (month) {
+                this.month = month;
+            }
+            this.setYear = function (year) {
+                this.year = year;
+            }
+            this.setDate = function (day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
         }
-        this.setDate = function (day, month, year) {
-            this.day=day;
-            this.month=month;
-            this.year=year;
-        }
+    }
 
-    };
-    let date = new myDate(2, 2, 2007);
+    let date = new MyDate(2, 2, 2007);
     date.setDay(10);
     date.setMonth(10);
     date.setYear(2019);
@@ -44,10 +75,9 @@
     let year = date.getYear();
     console.log(day + "/" + month + "/" + year);
 
-    let date1 = new myDate(11,10,1999);
-    console.log(date1);
-    date1.setDate(10,10,1999);
-    console.log(date);
+    date.setDate(11, 10, 1999);
+    console.log(date)
+
 
 </script>
 </body>
