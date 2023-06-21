@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập 2</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celius) {
+            this.celius = celius;
+        }
+
+        getCelius() {
+            return this.celius ;
+        }
+
+        getFahrenheit() {
+            return (this.celius * 1.8) + 32;
+        }
+
+        getKevin() {
+            return (this.celius + 272.15);
+        }
+    }
+
+    let temperature = new Temperature(25);
+    let fahrenheit = temperature.getFahrenheit();
+    let kevin = temperature.getKevin();
+    document.write("fahrenheit =" + fahrenheit + "</br>");
+    document.write("Kevin =" + kevin);
+</script>
+</body>
+</html>
