@@ -5,88 +5,102 @@
     <title>bài tập 3</title>
 </head>
 <body>
-    <script>
-       class Mobile {
-            constructor(battery,smsText,inboxSms,sentSms,status) {
-                this.battery = battery;
-                this.smsText = smsText;
-                this.inboxSms = inboxSms;
-                this.sentSms = sentSms;
-                this.status = status;
-            }
-            checkStatus() {
-               if (this.status) {
-                   document.write("The Phone is open");
+<script>
+    class Mobile {
+        constructor(battery, smsText, inboxSms, sentSms, status) {
+            this.battery = battery;
+            this.smsText = smsText;
+            this.inboxSms = inboxSms;
+            this.sentSms = sentSms;
+            this.status = status;
+        }
 
-               }else {
-                   document.write("The Phone is off");
-               } this.battery--;
-            }
-            turnOn() {
-                if (this.status) {
-                    document.write("The Phone turned on");
-                }else {
-                    this.status = true;
-                    this.battery--;
-                }
-            }
-            turnof() {
-                if (this.status) {
-                    document.write("The phone turning on");
-                    this.battery--;
-                }else
-                    document.write("The phone turning off");
-            }
+        checkStatus() {
+            if (this.status) {
+                document.write("The Phone is open");
 
-            setBattery(battery) {
-                    this.battery = battery;
+            } else {
+                document.write("The Phone is off");
             }
-            setTextingSms(sms) {
-                if (this.battery) {
-                    this.smsText.unshift(sms);
-                    this.battery--;
-                }else
-                    document.write("The Phone turning off")
+            this.battery--;
+        }
+
+        turnOn() {
+            if (this.status) {
+                document.write("The Phone turned on");
+            } else {
+                this.status = true;
+                this.battery--;
             }
-            setSentMes(mobile,sms) {
-                if (this.status) {
-                    this.sentSms.push(sms);
-                    mobile.inboxSms.unshift(sms);
-                    this.battery--
-                }else
-                    document.write("The Phone turning off");
+        }
+
+        turnof() {
+            if (this.status) {
+                document.write("The phone turning on");
+                this.battery--;
+            } else
+                document.write("The phone turning off");
+        }
+
+        setBattery(battery) {
+            this.battery = battery;
+        }
+
+        setTextingSms(sms) {
+            if (this.status) {
+                this.smsText.unshift(sms);
+                this.battery--;
+            } else
+                document.write("The Phone turning off")
+        }
+
+        sentMes(mobile, sms) {
+            if (this.status) {
+                this.sentSms.push(sms);
+                mobile.inboxSms.unshift(sms);
+                this.battery--
+            } else
+                document.write("The Phone turning off");
+        }
+
+        receiveMes(sms) {
+            if (this.status) {
+                this.inboxSms.unshift(sms);
+                document.write("New messenger");
+                this.battery--;
+            } else {
+                document.write("The Phone turning off");
             }
-            receiveMes(sms) {
-                if(this.status) {
-                    this.inboxSms.unshift(sms);
-                    document.write("New messenger");
-                    this.battery--;
-                }else {
-                    document.write("The Phone turning off");
-                }
+        }
+
+        getInbox() {
+            if (this.status) {
+                this.battery--;
+                return this.inboxSms;
+
             }
-           getInbox () {
-                if (this.status) {
-                    this.battery--;
-                    return this.inboxSms;
+        }
 
-                }
-           }
-           getSent () {
-                if (this.status)
-                    this.battery--;
-                return this.sentSms;
-           }
-       }
-       let samsung = new Mobile(50, [], [] , [], [], true);
-       let iphone = new Mobile(70, [], [] , [], [], true);
+        getSent() {
+            if (this.status)
+                this.battery--;
+            return this.sentSms;
+        }
+    }
 
-       samsung.checkStatus();
-       iphone.turnOn();
-       samsung.setBattery(100);
-       document.write(samsung.battery);
+    let samsung = new Mobile(50, [], [], [], [], true);
+    let iphone = new Mobile(70, [], [], [], [], true);
 
-
-    </script>
+    // samsung.checkStatus();
+    // iphone.turnOn();
+    // samsung.setBattery(100);
+    // document.write(samsung.battery);
+    samsung.setTextingSms("Go to the movie?")
+    document.write(samsung.smsText + "<br>")
+    document.write(samsung.battery +"</br>")
+    samsung.sentMes(iphone, "Do you want coffee"+"</br>")
+    document.write(iphone.inboxSms)
+    document.write(samsung.battery)
+</script>
 </body>
 </html>
