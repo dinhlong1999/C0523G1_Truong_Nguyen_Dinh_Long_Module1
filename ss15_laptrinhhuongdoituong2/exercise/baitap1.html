@@ -11,14 +11,6 @@
             this.weight = weight;
         }
 
-        getWeight() {
-            return this.weight;
-        }
-
-        setWeight(weight) {
-            return this.weight = weight;
-        }
-
         isEmpty() {
             if (this.weight < 0) {
                 return true;
@@ -112,6 +104,10 @@
     document.write("Weight of apple " + apple.weight + '<br>');
     human1.checkApple(apple);
     human2.checkApple(apple);
+    console.log(human1.isMale())
+    console.log(human2.isMale())
+    console.log(human1.getGender())
+
 </script>
 </body>
 </html>
