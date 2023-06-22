@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập 1</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            return this.weight = weight;
+        }
+
+        isEmpty() {
+            if (this.weight < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        decrease() {
+            if (this.isEmpty()) {
+                alert("No more apple");
+            } else {
+                this.weight--;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        setWeight(weight) {
+            this.weight = weight
+        }
+
+        isMale() {
+            if (this.gender === "men") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        getGender() {
+            if (this.isMale) {
+                return "Male";
+            } else {
+                return "Female";
+            }
+        }
+
+        checkApple(apple) {
+            return apple.isEmpty();
+        }
+
+        say() {
+            document.write("I am " + this.name + '</br>');
+        }
+
+        eatApple(apple) {
+            if (apple.weight > 0) {
+                apple.decrease();
+                this.weight++;
+            } else {
+                alert("No more apple");
+            }
+        }
+
+    }
+
+    let human1 = new Human('Adam', 'men', 70);
+    let human2 = new Human('Eva', "female", 50);
+    let apple = new Apple(60);
+
+    human1.say(human1.name);
+    human1.eatApple(apple);
+    document.write(human1.name + " eat apple" + '<br>');
+    document.write("Weight of " + human1.name + human1.weight + '<br>');
+    document.write("Weight of apple " + apple.weight + '<br>');
+
+    human2.say(human2.name);
+    human2.eatApple(apple);
+    document.write(human2.name + " eat apple" + '<br>');
+
+    document.write("Weight of " + human2.name + human2.weight + '<br>');
+    document.write("Weight of apple " + apple.weight + '<br>');
+    human1.checkApple(apple);
+    human2.checkApple(apple);
+</script>
+</body>
+</html>
