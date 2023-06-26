@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    // let arrA = [5, 2, 5];
+    // let arrB = [6, 3, 4];
+    let arrA= prompt("Please import your number no.1: ");
+    let arrB= prompt("Please import your number no.2: ");
+    arrA = arrA.split("");
+    arrB = arrB.split("");
+    let max = arrA[0] / arrB[0] ;
+    let index;
+    for (let i = 1; i < arrA.length; i++) {
+        if (arrA[i] / arrB[i] > max ) {
+            max = arrA[i] / arrB[i];
+            index = i;
+        }
+    }document.write("Only best number: " + index);
+  </script>
+</body>
+</html>

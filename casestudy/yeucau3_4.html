@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    do {
+        let order = +prompt("Please choose drink: ?");
+        let result;
+        if (order === 1) {
+            let quality = +prompt("Cafe is 15 Đ, how many cafe?");
+            result = quality * 15;
+            document.write("Total: " + result + " Đ");
+        } else if (order === 2) {
+            let quality = +prompt("orange juice is 20 Đ, how many? ");
+            result = quality * 20;
+            document.write("Total: " + result + " Đ");
+        } else if (order === 3) {
+            let quality = +prompt("Carrot juice is 25 Đ, how many ? ");
+            result = quality * 25;
+            document.write("Total: " + result + " Đ");
+        } else if (order === 4) {
+            let quality = +prompt("tomato juice is 30 Đ, how many? ");
+            result = quality * 30;
+            document.write("Total: " + result + " Đ");
+        } else if (order === 5) {
+            let quality = +prompt("Drink water is 5 Đ, how many? ");
+            result = quality * 5;
+            document.write("Total: " + result + " Đ");
+        } else if (order === 6) {
+            let quality = +prompt("Coconut is 20 Đ, how many? ");
+            result = quality * 20;
+            document.write("Total: " + result + " Đ");
+        }
+    } while (order < 7)
+</script>
+</body>
+</html>

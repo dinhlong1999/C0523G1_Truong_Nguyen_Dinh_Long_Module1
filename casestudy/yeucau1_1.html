@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 1 (IF và switch case)</title>
+</head>
+<body>
+<form>
+    <h1>TEX OF STAFF</h1>
+    <input type="number" id="salary" placeholder="IMPORT NUMBER">
+    <input type="button" value="CHECK" onclick="check()">
+    <div id="result">Compulsory tax</div>
+    <div id="sal">Salary received</div>
+
+</form>
+<script>
+    function check() {
+        let salary = document.getElementById("salary").value;
+        let result;
+        let sal;
+
+        if ( salary >= 15000000) {
+            result = salary * 0.2;
+            sal = salary - result;
+        } else if (salary < 15000000 && salary >= 7000000) {
+            result = salary * 0.1;
+            sal = salary - result;
+        } else {
+            result = salary * 0.05;
+            sal = salary - result;
+        }
+
+        document.getElementById("result").innerHTML = "Compulsory tax = " + result + "Đ";
+        document.getElementById("sal").innerHTML = 'Salary received = ' + sal + "Đ";
+    }
+
+</script>
+</body>
+</html>

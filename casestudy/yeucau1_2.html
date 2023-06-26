@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IF and SWITCH CASE </title>
+</head>
+<body>
+<script>
+    let txt = prompt("Please import your text:");
+    let arr = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E'];
+    let flag = false
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === txt) {
+            flag = true;
+            break;
+        }
+    }
+    if (flag) {
+        console.log(txt + " is vowel ");
+    } else {
+        console.log(txt + " is consonant ");
+    }
+
+
+</script>
+</body>
+</html>
