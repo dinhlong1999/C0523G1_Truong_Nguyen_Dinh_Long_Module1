@@ -7,18 +7,17 @@
 <body>
 <script>
     let str = "cabca";
-    let count =0;
-    debugger;
+    let count = 0;
+    let arr = [];
     for (let i = 0; i < str.length; i++) {
-        for (let j = 0; j < str.length; j++) {
-            if (str[i] === str[j]) {
-                alert(str[i])
-                break;
-            }
+        if (arr.includes(str[i])) {
+            continue;
+        } else {
+            arr.push(str[i])
         }
-
-
     }
+    document.write("Different number of characters is: " + arr.length + "</br>");
+    document.write("Characters different is: " + arr.toString());
 
 
 </script>

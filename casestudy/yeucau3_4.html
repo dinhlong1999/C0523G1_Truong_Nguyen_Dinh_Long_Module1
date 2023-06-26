@@ -6,35 +6,81 @@
 </head>
 <body>
 <script>
+    // do {
+    //     let order = +prompt("Please choose drink: ?");
+    //     let result;
+    //     if (order === 1) {
+    //         let quality = +prompt("Cafe is 15 Đ, how many cafe?");
+    //         result = quality * 15;
+    //         document.write("Total: " + result + " Đ");
+    //     } else if (order === 2) {
+    //         let quality = +prompt("orange juice is 20 Đ, how many? ");
+    //         result = quality * 20;
+    //         document.write("Total: " + result + " Đ");
+    //     } else if (order === 3) {
+    //         let quality = +prompt("Carrot juice is 25 Đ, how many ? ");
+    //         result = quality * 25;
+    //         document.write("Total: " + result + " Đ");
+    //     } else if (order === 4) {
+    //         let quality = +prompt("tomato juice is 30 Đ, how many? ");
+    //         result = quality * 30;
+    //         document.write("Total: " + result + " Đ");
+    //     } else if (order === 5) {
+    //         let quality = +prompt("Drink water is 5 Đ, how many? ");
+    //         result = quality * 5;
+    //         document.write("Total: " + result + " Đ");
+    //     } else if (order === 6) {
+    //         let quality = +prompt("Coconut is 20 Đ, how many? ");
+    //         result = quality * 20;
+    //         document.write("Total: " + result + " Đ");
+    //     }
+    // } while (order < 7)
+
+    let menu = ["Cafe(15.000)", "Cam Vat(20.000)", "Nuoc ep ca rot(20.000)", "Nuoc ep ca chua(20.000)", "Nuoc loc(10.000)", "Nuoc dua(25.000"];
+    let order;
+    let total = 0;
+    let flag;
+    let quality;
     do {
-        let order = +prompt("Please choose drink: ?");
-        let result;
-        if (order === 1) {
-            let quality = +prompt("Cafe is 15 Đ, how many cafe?");
-            result = quality * 15;
-            document.write("Total: " + result + " Đ");
-        } else if (order === 2) {
-            let quality = +prompt("orange juice is 20 Đ, how many? ");
-            result = quality * 20;
-            document.write("Total: " + result + " Đ");
-        } else if (order === 3) {
-            let quality = +prompt("Carrot juice is 25 Đ, how many ? ");
-            result = quality * 25;
-            document.write("Total: " + result + " Đ");
-        } else if (order === 4) {
-            let quality = +prompt("tomato juice is 30 Đ, how many? ");
-            result = quality * 30;
-            document.write("Total: " + result + " Đ");
-        } else if (order === 5) {
-            let quality = +prompt("Drink water is 5 Đ, how many? ");
-            result = quality * 5;
-            document.write("Total: " + result + " Đ");
-        } else if (order === 6) {
-            let quality = +prompt("Coconut is 20 Đ, how many? ");
-            result = quality * 20;
-            document.write("Total: " + result + " Đ");
+        order = +prompt("Menu: \n 1.Cafe \n 2.Cam Vắt \n 3.Nuoc ep ca rot \n 4.Nuoc ep ca chua \n 5.Nước lọc \n 6.Nước dừa \n 7.Huy goi mon");
+
+        if (order === 7) {
+            flag = confirm("Ban muon huy goi nuoc");
         }
-    } while (order < 7)
+        if (flag === true) {
+            alert("Cam on quy khach da su dung dich vu")
+        }
+        switch (order) {
+            case 1:
+                quality = +prompt(`${menu[0]}, vui long chon so luong:`);
+                total += quality * 15000;
+                break;
+            case 2:
+                quality = +prompt(`${menu[1]}, vui long chon so luong:`);
+                total += quality * 20000;
+                break;
+            case 3:
+                quality = +prompt(`${menu[2]}, vui long chon so luong:`);
+                total += quality * 20000;
+                break;
+            case 4:
+                quality = +prompt(`${menu[3]}, vui long chon so luong:`);
+                total += quality * 20000;
+                break;
+            case 5:
+                quality = +prompt(`${menu[4]}, vui long chon so luong:`);
+                total += quality * 10000;
+                break;
+            case 6:
+                quality = +prompt(`${menu[5]}, vui long chon so luong:`);
+                total += quality * 25000;
+                break;
+        }
+    } while (order < 7 || flag === false);
+    if (total > 0) {
+        alert("Tong tien cua quy khach: " + total + "Đ");
+    }
+
 </script>
 </body>
 </html>
