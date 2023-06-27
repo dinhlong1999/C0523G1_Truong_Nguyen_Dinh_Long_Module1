@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let txt1 = prompt("Nhap chuoi ki tu thu nhat cua ban vao: ");
+    txt1 = txt1.split("");
+    let txt2 = prompt("Nhap chuoi ki tu thu hai cua ban vao: ");
+    txt2 = txt2.split("");
+    let txt3 = [];
+    for (let i = 0; i < txt1.length; i++) {
+        for (let j = 0; j < txt2.length; j++) {
+            if (txt1[i] === txt2[j]) {
+                txt3.push(txt1[i]);
+                txt1.splice(i, 1);
+                txt2.splice(j, 1);
+                j--;
+            }
+        }
+    }
+    document.write("Số kí tự trùng nhau trong 2 chuỗi: " + txt3.length);
+</script>
+</body>
+</html>
