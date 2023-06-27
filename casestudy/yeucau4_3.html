@@ -5,21 +5,23 @@
     <title>bài 3</title>
 </head>
 <body>
-  <script>
-    let str1= "aabcc";
-    let str2= "adcaa";
-    let arr =[]
+<script>
+    let str1 = prompt("Nhap ki tu cua ban vao: ");
+    str1 = str1.split('');
+    let str2 = prompt("Nhap kí tu tiep theo de kiem tra: ");
+    str2 = str2.split('');
+    let arr = []
     for (let i = 0; i < str1.length; i++) {
         for (let j = 0; j < str2.length; j++) {
             if (str1[i] === str2[j]) {
-
+                arr.push(str1);
+                str1.splice(i, 1);
+                str2.splice(i, 1);
             }
         }
+    }
+    document.write("Số kí tự trùng nhau là: " + arr.length);
 
-
-
-    } d
-
-  </script>
+</script>
 </body>
 </html>

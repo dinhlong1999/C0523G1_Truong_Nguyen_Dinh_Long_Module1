@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m;
+    let n;
+    do {
+        m = +prompt("Nhap gia tri dong ( m > 0): ");
+        n = +prompt("Nhap gia tri cot ( n > 0):  ");
+        if (m < 0 && n < 0) {
+            alert("Ban khong nhap dung dieu kien, moi ban nhap lai:( m > 0),( n > 0)  ");
+        }
+    } while (m < 0 && n < 0)
+    let arr = [];
+    for (let i = 0; i < m; i++) {
+        arr[i] = [];
+        for (let j = 0; j < n; j++) {
+            arr[i][j] = +prompt(`Nhap vao phan tu arr[${i}][${j}]`);
+        }
+    }
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            document.write(arr[i][j]);
+        }
+        document.write("</br>")
+    }
+    let arrNew = [];
+    for (let i = 0; i < m; i++) {
+        for (let j = 0; j < n; j++) {
+            arrNew.push(arr[i][j]);
+        }
+    }
+    let count = 0;
+    debugger;
+    for (let i = 0; i < arrNew.length; i++) {
+        let flag = true;
+        if (arrNew[i] <= 1) {
+            continue;
+        } else {
+            for (let j = 2; j < arrNew[i]; j++) {
+                if (arrNew[i] % j === 0) {
+                    flag = false;
+                }
+            }
+            if (flag) {
+                count += 1;
+            }
+        }
+    }
+    document.write("Số lượng số nguyên tố trong mảng: " + count);
+
+
+</script>
+</body>
+</html>
