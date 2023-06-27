@@ -5,22 +5,46 @@
     <title>bài 1</title>
 </head>
 <body>
-<div id="result"></div>
-<div id="result2"></div>
-<div id="result3"></div>
-  <script>
-   let txt = prompt("Nhap chu vao de chuan hoa: ")
-   document.getElementById(result).innerText = txt;
-      changenumber(txt);
-   function changenumber(txt) {
-       txt = txt.split('');
-       for (let i = 0; i < txt.length; i++) {
-           
-       }
-   }
 
+<script>
+    debugger;
+    let txt = prompt("Nhap chu vao de chuan hoa: ");
+    document.write("Chu truoc khi nhap vao: " + txt + "</br>");
+    txt = txt.split(" ");
+    let str = "";
 
+    function changName(txt1) {
 
-  </script>
+        for (let i = 0; i < txt1.length; i++) {
+            if (txt1[i] === "") {
+                txt1.splice(i, 1);
+                i--;
+            } else {
+                txt1[i] = txt1[i].toLowerCase();
+                str = txt1[i]
+                str = str.split('');
+                str[0] = str[0].toUpperCase();
+                str = str.join('');
+                txt1[i] = str;
+            }
+        }
+        return "Chữ sau khi chuẩn hoá: " + txt1.join(" ");
+    }
+
+    document.write(changName(txt)+ "</br>");
+
+    function checkMax(txt1) {
+         max = txt1[0];
+        for (let i = 0; i < txt1; i++) {
+            if (txt1[i] > max) {
+                max = txt1[i];
+            }
+        }
+        txt1 = max;
+        return "Chữ lớn nhất trong chuỗi: " + txt1;
+    }
+    document.write(checkMax(txt)+ "</br>");
+
+</script>
 </body>
 </html>

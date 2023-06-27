@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+<script>
+    let name = prompt("Nhap vao");
+    console.log("chu trươc khi nhap vao: " + name);
+    name= name.split(" ");
+    let box = "";
+
+    function changeName(name2) {
+        for (let i = 0; i < name2.length; i++) {
+            if( name2[i] === ''){
+                name2.splice(i,1);
+                i--
+            }else {
+                name2[i] = name2[i].toLowerCase();
+                box = name2[i]
+                box = box.split('')
+                box[0] = box[0].toUpperCase();
+                box =box.join('');
+                name2[i] = box;
+            }
+        }
+        return "Giá trị sau khi chuẩn hoá: " + name2.join(' ');
+    }
+    console.log(changeName(name));
+
+    function checkName(name2) {
+        max = name2[0];
+        for (let i = 0; i < name2.length; i++) {
+            if (name2[i] > max) {
+                max = name2[i];
+            }
+        }
+        name2 = max;
+        return "Chữ lớn nhất: " + name2;
+    }
+    console.log(checkName(name));
+</script>
+</body>
+</html>
