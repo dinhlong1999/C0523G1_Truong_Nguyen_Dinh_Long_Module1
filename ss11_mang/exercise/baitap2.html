@@ -6,28 +6,48 @@
 </head>
 <body>
 <form>
-  <value>Nhập từ:</value>
-  <input type="text" id="txt">
-  <input type="button" value="Dịch" onclick="changedata()">
-  <div id="result"></div>
+    <value>Nhập từ:</value>
+    <input type="text" id="txt">
+    <input type="button" value="Dịch" onclick="changedata()">
+    <div id="result"></div>
 </form>
-  <script>
+<script>
     function changedata() {
-        let arr = ["banana", "apple", "candy"];
-        let arr1 = ["chuối", "táo", "kẹo"];
-        let sear = document.getElementById("txt").value;
-        let data;
+        let arr = ["banana", "apple", "candy", "soccer", "bicycle"];
+        let arr1 = ["chuối", "táo", "kẹo", "bóng đá", "xe đạp"];
+        let sear = document.getElementById('txt').value;
+        let index_arr = -1;
+        let output;
         for (let i = 0; i < arr.length; i++) {
             if (sear === arr[i]) {
-                for (let j = 0; j < arr1.length; j++) {
-                    data = arr1[i]
-                }
+                index_arr = i;
+            }
+            if (index_arr !== -1) {
+                output = arr1[index_arr];
+            } else {
+                output = "Không tìm thấy từ";
             }
         }
-    document.getElementById("result").innerText= data
+        document.getElementById('result').innerHTML = output;
     }
 
 
-  </script>
+    /*  function changedata() {
+          let arr = ["banana", "apple", "candy"];
+          let arr1 = ["chuối", "táo", "kẹo"];
+          let sear = document.getElementById("txt").value;
+          let data;
+          for (let i = 0; i < arr.length; i++) {
+              if (sear === arr[i]) {
+                  for (let j = 0; j < arr1.length; j++) {
+                      data = arr1[i]
+                  }
+              }
+          }
+      document.getElementById("result").innerText= data
+      }*/
+
+
+</script>
 </body>
 </html>

@@ -8,11 +8,11 @@
   <script>
     let h = +prompt("Nhap chieu cao cua tam giac: ");
     debugger;
-    for (let i = 1; i <=h ; i++) {
-      for (let k = h; k > i ; k--) {
+    for (let row = 1; row <= h ; row++) {
+      for (let k = h; k > row ; k--) {
         document.write("&nbsp;&nbsp;");
       }
-      for (let j = 1; j <= i * 2 -1 ; j++) {
+      for (let col = 1; col <= row * 2 -1 ; col++) {
         document.write("*");
       }
       document.write("</br>");

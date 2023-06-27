@@ -6,25 +6,26 @@
 </head>
 <body>
 <input type="button" value="button" id="Bắt đầu" onclick="game()">
-  <script>
+<script>
     function game() {
-      let down = +prompt("Moi ban nhap so can duoi ")
-      let up = +prompt("Moi ban nhap so can tren ")
-      let ramdom = Math.round(Math.random() * (up - down) + down)
-      let i = 1
-      do {
-        let num = +prompt("Mời Bạn dự đoán số")
-        if (num > ramdom) {
-          alert("Số bạn nhập vào lớn hơn, vui lòng nhập lại")
-        } else if (num > ramdom) {
-          alert("Số bạn nhập vào nhỏ hơn, vui lòng nhập lại")
-        } else {
-          alert("Chúc mừng bạn")
-          break;
-        }
-        i++
-      } while (i < 4)
+        let down = +prompt("Moi ban nhap so can duoi ")
+        let up = +prompt("Moi ban nhap so can tren ")
+        let ramdom = Math.round(Math.random() * (up - down) + down)
+        let i = 1
+        debugger;
+        do {
+            let num = +prompt("Mời Bạn dự đoán số")
+            if (num > ramdom) {
+                alert("Số bạn nhập vào lớn hơn, vui lòng nhập lại");
+            } else if (num > ramdom) {
+                alert("Số bạn nhập vào nhỏ hơn, vui lòng nhập lại");
+            } else {
+                alert("Chúc mừng bạn")
+                break;
+            }
+            i++
+        } while (i < 4)
     }
-  </script>
+</script>
 </body>
 </html>
