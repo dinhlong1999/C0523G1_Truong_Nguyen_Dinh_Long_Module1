@@ -33,15 +33,16 @@
 
     document.write(changName(txt)+ "</br>");
 
+
     function checkMax(txt1) {
-         max = txt1[0];
+        let  max = txt1[0];
         for (let i = 0; i < txt1.length; i++) {
             if (txt1[i] > max) {
                 max = txt1[i];
             }
         }
-        txt1 = max;
-        return "Chữ lớn nhất trong chuỗi: " + txt1;
+
+        return "Chữ lớn nhất trong chuỗi: " + max;
     }
     document.write(checkMax(txt)+ "</br>");
 

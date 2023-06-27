@@ -6,14 +6,14 @@
 </head>
 <body>
 <script>
-    let h = +prompt("Please import your number: ");
+    let chieuCao = +prompt("Please import your number: ");
     debugger;
-    for (let i = 1; i <= h; i++) {
-        for (let k = h; k > i; k--) {
+    for (let row = 1; row <= chieuCao; row++) {
+        for (let j = chieuCao; j > row; j--) {
             document.write("&nbsp;");
         }
-        for (let j = 1; j <= h; j++) {
-            if (j === 1 || i === h || i === j) {
+        for (let col = 1; col <= chieuCao; col++) {
+            if (col === 1 || row === chieuCao || row === col) {
                 document.write("*");
             } else {
                 document.write("&nbsp;&nbsp;");

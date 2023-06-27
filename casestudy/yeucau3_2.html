@@ -6,8 +6,12 @@
 </head>
 <body>
 <script>
-    let a = [1, 3, 5, 7, 9];
-    let b = [1, 3, 4, 6, 5, 7, 9];
+    // let a = [1, 3, 5, 7, 9];
+    // let b = [1, 3, 4, 6, 5, 7, 9];
+    let a = prompt("Nhap chuoi 1 cua ban vao: ");
+    a = a.split('');
+    let b = prompt("Nhap chuoi 2 cua ban vao :");
+    b = b.split("")
     let c = [];
     let result = 0;
     debugger;
@@ -24,7 +28,7 @@
             c.push(result);
         }
     }
-    document.write(c + '');
+    document.write("So khac nhau trong day so la : " + c );
 </script>
 </body>
 </html>
