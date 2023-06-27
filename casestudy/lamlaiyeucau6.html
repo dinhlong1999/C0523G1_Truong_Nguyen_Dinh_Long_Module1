@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lam lai yeu cau 6</title>
+</head>
+<body>
+<button onclick="add()">Thêm mới cầu thủ</button>
+<button onclick="edit()">Sửa thông tin cầu thủ</button>
+<button onclick="del()">Xoá cầu thủ</button>
+<div id="result"></div>
+<script>
+    class Player {
+        constructor(id, name, age, club, cup, goal) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+            this.club = club;
+            this.cup = cup;
+            this.goal = goal;
+        }
+    }
+
+    let player1 = new Player("PORTUGAL-7", "C.RONALDO", "38", "Al-nassr", "34", "900");
+    let player2 = new Player("ARGENTINA-10", "L.MESSI", "36", "PSG", "34", "800");
+    let player3 = new Player("BRAZIL-10", "NEYMAR", "31", "PSG", "31", "500");
+
+    let listPlayer = [];
+    listPlayer.push(player1, player2, player3);
+    dataPlayer(listPlayer);
+
+    function dataPlayer(data) {
+        let table = `<table border =1>
+                        <thead>
+                        <tr>
+                        <th>Quốc gia</th>
+                        <th>Tên Cầu thủ</th>
+                        <th>Tuổi</th>
+                        <th>Câu lạc bộ thi đấu</th>
+                        <th>Cup nhận được</th>
+                        <th>Số bàn thắng</th>
+                        </tr>
+                        </thead>`
+        for (let i = 0; i < listPlayer.length; i++) {
+            table += `<tbody>
+                          <tr>
+                          <td>${data[i].id}</td>
+                          <td>${data[i].name}</td>
+                          <td>${data[i].age}</td>
+                          <td>${data[i].club}</td>
+                          <td>${data[i].cup}</td>
+                          <td>${data[i].goal}</td>
+                          </tr>
+                          </tbody>`
+        }
+        table += `</table>`
+        document.getElementById("result").innerHTML = table;
+    }
+
+    dataPlayer(listPlayer);
+
+    function add() {
+        let idNew = prompt("Nhap ten quoc gia: ");
+        let nameNew = prompt("Nhap ten cau thu: ");
+        let ageNew = prompt("Nhap tuoi cau thu: ");
+        let clubNew = prompt("Nhap cau lac bo thi dau: ");
+        let cupNew = prompt("Nhap so cup cau thu nhan duoc: ");
+        let goalNew = prompt("Nhap so ban thang cau thu ghi được: ");
+        let playNew = new Player(idNew, nameNew, ageNew, clubNew, cupNew, goalNew);
+        listPlayer.push(playNew);
+        dataPlayer(listPlayer);
+    }
+
+    function edit() {
+        let editPlayer = prompt("Nhap mã quốc gia của cầu thủ: ");
+        let flag = false;
+        for (let i = 0; i < listPlayer.length; i++) {
+            if (editPlayer === listPlayer[i].id) {
+                listPlayer[i].id = prompt(listPlayer[i].id + "Sửa tên thành:");
+                listPlayer[i].name = prompt(listPlayer[i].name + "Sửa tên thành ");
+                flag = true;
+                break;
+            }
+        }
+        if (flag === false) {
+            alert("khong ton tai cau thủ")
+        }
+        dataPlayer(listPlayer);
+    }
+
+    function del() {
+        let delPlayer = prompt("Nhap ma quoc cua cua cầu thủ cần xoá: ");
+        let flag = false;
+        for (let i = 0; i < listPlayer.length; i++) {
+            if (delPlayer === listPlayer[i].id) {
+                listPlayer.splice(i, 1);
+                flag = true;
+                break
+            }
+        }
+        if (flag === false) {
+            alert("khong ton tai cau thủ");
+
+        }
+        dataPlayer(listPlayer);
+    }
+</script>
+</body>
+</html>

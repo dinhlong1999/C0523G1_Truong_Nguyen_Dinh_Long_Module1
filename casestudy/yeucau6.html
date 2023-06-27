@@ -5,18 +5,107 @@
     <title>Title</title>
 </head>
 <body>
+<button onclick="add()">Thêm mới học viên</button>
+<button onclick="edit()">Sửa thông tin học viên</button>
+<button onclick="del()">Xoá học viên</button>
+<div id="result"></div>
+<script>
+    class student {
+        constructor(id, name, grade, email, dob) {
+            this.id = id;
+            this.name = name;
+            this.grade = grade;
+            this.email = email;
+            this.dob = dob;
+        }
+    }
 
-    <table border="1">
-        <thead>
-        <tr>
-            <td>Mã học viên</td>
-            <td>Tên</td>
-            <td>Lớp</td>
-            <td>Email</td>
-            <td>Email</td>
-            <td>Ngày sinh</td>
-        </tr>
-        </thead>
-    </table>
+    let hv1 = new student('HV-0001', 'Nguyễn Văn A', 'C1022G1', 'nguyenvana@gmail.com', '01/01/2004');
+    let hv2 = new student('HV-0002', 'Nguyễn Văn B', 'C1122G1', 'nguyenvanb@gmail.com', '02/02/2004');
+    let hv3 = new student('HV-0003', 'Nguyễn Thị C', 'C1222G1', 'nguyenthic@gmail.com', '03/03/2004');
+
+    let listHV = [];
+    listHV.push(hv1, hv2, hv3);
+    dataHV(listHV);
+
+    function dataHV(data) {
+        let table = `<table border=\"1\">
+                    <thead>
+                    <tr>
+                    <th>Mã học viên</th>
+                    <th>Tên</th>
+                    <th>Lớp</th>
+                    <th>Email</th>
+                    <th>Ngày sinh</th>
+                    </tr>
+                    </thead>`
+        for (let i = 0; i < data.length; i++) {
+            table += `<tbody>
+                      <tr>
+                      <td>${data[i].id}</td>
+                      <td>${data[i].name}</td>
+                      <td>${data[i].grade}</td>
+                      <td>${data[i].email}</td>
+                      <td>${data[i].dob}</td>
+                      </tr>
+                      </tbody>`
+
+        }
+        table += `</table>`;
+        document.getElementById("result").innerHTML = table;
+    }
+
+    dataHV(listHV);
+
+    function add() {
+        let addID = prompt("Nhập id của học viên: ");
+        let addName = prompt("Nhap ten cua hoc vien: ");
+        let addGrade = prompt("Nhap ten lop: ");
+        let addEmail = prompt("Nhap email: ");
+        let addDOB = prompt("Nhap ngày sinh");
+        let infHV = new student(addID, addName, addGrade, addEmail, addDOB);
+        listHV.push(infHV);
+        dataHV(listHV);
+    }
+
+    function del() {
+        let delInf = prompt("Nhap vao id ban muốn xoa");
+        let flag = false
+        for (let i = 0; i < listHV.length; i++) {
+            if (delInf === listHV[i].id) {
+                listHV.splice(i, 1);
+                flag = true;
+                break;
+            }
+
+        }
+        if (flag === false) {
+            alert("Mã học viên không tồn tại");
+        }
+
+        dataHV(listHV);
+    }
+
+    function edit() {
+        let editHV = prompt("Nhap vao ma hoc vien ban muon sua :");
+        let flag = false;
+        for (let i = 0; i < listHV.length; i++) {
+            if (editHV === listHV[i].id) {
+                listHV[i].name = prompt(listHV[i].name + " Sửa thành tên: ");
+                listHV[i].grade = prompt(listHV[i].grade + " chuyển sang lớp: ");
+                flag = true;
+                break;
+            }
+        }
+        if (flag === false) {
+            alert("Mã học viên không tồn tại.")
+        }
+        dataHV(listHV);
+    }
+
+
+
+
+</script>
 </body>
 </html>
