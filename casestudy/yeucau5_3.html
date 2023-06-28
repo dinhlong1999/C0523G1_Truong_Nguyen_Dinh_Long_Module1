@@ -29,25 +29,25 @@
         document.write("<br>");
     }
 
-    function checkMaxMin(arr) {
-        let max = arr[0][0];
-        let min = arr[0][0];
+    function checkMaxMin(arr1) {
+        let max = arr1[0][0];
+        let min = arr1[0][0];
         let arrNew = []
         debugger;
-        for (let i = 0; i < arr.length; i++) {
-            for (let j = 0; j < arr[i].length; j++) {
-                if (arr[i][j] > max) {
-                    max = arr[i][j];
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr1[i].length; j++) {
+                if (arr1[i][j] > max) {
+                    max = arr1[i][j];
 
                 }
-                if (arr[i][j] < min) {
-                    min = arr[i][j];
+                if (arr1[i][j] < min) {
+                    min = arr1[i][j];
 
                 }
             }
         }
         arrNew.push(max, min);
-        document.write("Phần tử lớn nhất và nhỏ nhất tương ứng la " + arrNew);
+        document.write("Phần tử lớn nhất và nhỏ nhất tương ứng la:  " + arrNew);
     }
     checkMaxMin(arr);
 
