@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="add()">Thêm mới học viên</button>
+<button onclick="edit()">Sửa thông tin học viên</button>
+<button onclick="del()">Xoá học viên</button>
+<div id="result">
+</div>
+<script>
+    class Student {
+        constructor(id, name, grade, email, dob, module) {
+            this.id = id;
+            this.name = name;
+            this.grade = grade;
+            this.email = email;
+            this.dob = dob;
+            this.module = module;
+        }
+    }
+
+    let student1 = new Student("Hv-0001", "ronlado", "10a1", "email", "11/10/1999", "1");
+    let student2 = new Student("Hv-0002", "Messi", "10a2", "email", "11/10/1999", "1");
+    let student3 = new Student("Hv-0003", "neymar", "10a3", "email", "11/10/1999", "1");
+
+    let listStudent = [];
+    listStudent.push(student1, student2, student3);
+    dataStudent(listStudent);
+
+    function dataStudent(data) {
+        let table = `<table border = 1>
+                    <thead>
+                    <tr>
+                    <th>Mã học viên</th>
+                    <th>Tên</th>
+                    <th>Lớp</th>
+                    <th>Email</th>
+                    <th>Ngày sinh</th>
+                    <th>Module</th>
+                    </tr>
+                    </thead>`
+        for (let i = 0; i < data.length; i++) {
+            table += `<tbody>
+                       <tr>
+                       <td>${data[i].id}</td>
+                       <td>${data[i].name}</td>
+                       <td>${data[i].grade}</td>
+                       <td>${data[i].email}</td>
+                       <td>${data[i].dob}</td>
+                       <td>${data[i].module}</td>
+                       </tr>
+                       </tbody>`
+
+        }
+        table += `</table>`
+        document.getElementById("result").innerHTML = table;
+    }
+
+    dataStudent(listStudent);
+
+    function add() {
+        let addID = prompt("Vui long nhap id ")
+        let addName = prompt("Vui long nhap ten:");
+        let addGrade = prompt("Vui long nhap lop:");
+        let addEmail = prompt("VUi long nhap email:");
+        let addDOB = prompt("Vui long nhap ngay sinh: ");
+        let addModule = prompt("Vui long nhap module dang học: ");
+        let addStudent = new Student(addID, addName, addGrade, addEmail, addDOB, addModule);
+        listStudent.push(addStudent);
+        dataStudent(listStudent);
+    }
+
+    function edit() {
+        let editStudent = prompt("Nhap id hoc vien can sua: ");
+        let flag = false;
+        for (let i = 0; i < listStudent.length; i++) {
+            if (editStudent === listStudent[i].id) {
+                listStudent[i].name = prompt(listStudent[i].name + " Nhap ten ban muon sua: ");
+                listStudent[i].grade = prompt(listStudent[i].grade + " Nhap lop ban muon sua: ");
+                listStudent[i].email = prompt(listStudent[i].email + " Nhap email ban muon sua: ");
+                listStudent[i].dob = prompt(listStudent[i].dob + " Nhap ngay sinh ban muon sua: ");
+                listStudent[i].module = prompt(listStudent[i].module + " Nhap module dang hoc: ");
+
+                flag = true;
+                break;
+            }
+        }
+        if (flag === false) {
+            alert("Khong tim thay ma hoc vien");
+        }
+        dataStudent(listStudent);
+    }
+
+    function del() {
+        let delStudent = prompt("Nhap id hoc vien ban can xoa");
+        let flag = false;
+        for (let i = 0; i < listStudent.length; i++) {
+            if (delStudent === listStudent[i].id) {
+                listStudent.splice(i, 1);
+                flag = true;
+                break;
+            }
+        }
+        if (flag === false) {
+            alert("Khong tim thay ma hoc vien.")
+        }
+        dataStudent(listStudent);
+    }
+
+</script>
+</body>
+</html>
